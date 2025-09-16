@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystery Cloud Sudoku</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+    <div class="game-container">
+        <h1>🌥️ Mystery Cloud Sudoku</h1>
+        <p class="subtitle">Solve the puzzle and discover hidden words as clouds clear.</p>
+        
+        <div class="info-panel">
+            <div class="info-item">
+                <div class="info-label">Words Found</div>
+                <div class="info-value" id="wordsFound">0/6</div>
+            </div>
+          
+            <div class="info-item">
+                <div class="info-label">Current Theme</div>
+                <div class="info-value">Animals</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Hints Used</div>
+                <div class="info-value" id="hintsUsed">0</div>
+            </div>
+        </div>
+
+        <div class="sudoku-grid" id="sudokuGrid"></div>
+
+        <div class="controls">
+            <button class="hint-btn" onclick="useHint()">💨 Wind Hint</button>
+            <div class="number-controls">
+                <button class="number-btn" onclick="selectNumber(1)">1</button>
+                <button class="number-btn" onclick="selectNumber(2)">2</button>
+                <button class="number-btn" onclick="selectNumber(3)">3</button>
+                <button class="number-btn" onclick="selectNumber(4)">4</button>
+                <button class="number-btn" onclick="selectNumber(5)">5</button>
+                <button class="number-btn" onclick="selectNumber(6)">6</button>
+                <button class="number-btn" onclick="selectNumber(7)">7</button>
+                <button class="number-btn" onclick="selectNumber(8)">8</button>
+                <button class="number-btn" onclick="selectNumber(9)">9</button>
+            </div>
+            <button class="clear-btn" onclick="clearCell()">❌ Clear</button>
+        </div>
+
+        <div class="action-buttons">
+            <button class="action-btn" onclick="newGame()">🎮 New Game</button>
+            <button class="action-btn" onclick="showWords()">📝 Show Words</button>
+            <button class="action-btn" onclick="toggleTheme()">🎨 Theme</button>
+        </div>
+
+        <div id="discoveredWords"></div>
+        
+        <div id="wordModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Discovered Words</h2>
+                <div id="wordsList"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
